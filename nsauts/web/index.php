@@ -30,6 +30,18 @@ if ($res->num_rows > 0) {
     echo "0 results";
 }
 
+# SQL Query untuk menampilkan jumlah user dalam database
+$sql2 = "SELECT * from users";
+
+if ($res2 = mysqli_query($conn, $sql2)) {
+
+    // Return the number of rows in result set
+    $jumlah = mysqli_num_rows($res2);
+    
+    // Display result
+    printf("Jumlah user dalam database :  %d\n", $jumlah);
+ }
+
 $conn->close();
 ?>
 
